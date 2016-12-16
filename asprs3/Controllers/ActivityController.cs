@@ -40,12 +40,12 @@ namespace asprs3.Controllers
             return View("Activity Not Added");
 
         }
-        public ActionResult EditTrip()
+        public ActionResult EditActivity()
         {
             return View(db.Activities.ToList());
         }
 
-        public ActionResult DeleteTrip(int id)
+        public ActionResult DeleteActivity(int id)
         {
             return View(db.Activities.Find(id));
         }

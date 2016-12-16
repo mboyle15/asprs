@@ -208,6 +208,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Student\SelectStudent.cshtml" />
     <Content Include="Views\Activity\ActivityManager.cshtml" />
+    <Content Include="Views\Activity\EditActivity.cshtml" />
+    <Content Include="Views\Activity\DeleteActivity.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
