@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "ActivityManager";
+}
+
+<div class="jumbotron">
+    <img src="../../images/rilkeSchule.jpg">
+    <h1>ActivityManagement</h1>
+    <p class="lead">Manage after school activities</p>
+
+</div>
+
+<div class="row">
+  
+    {
+        <div class="col-md-4">
+            <h2>Add Activity</h2>
+            <p>
+                Use this to add after school activities 
+            </p>
+            <p><a class="btn btn-default" onclick="location.href='@Url.Action("AddActivity", "Activity")'">Add Activity  &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+            <h2>Edit Activities</h2>
+            <p> Manage Current Activities</p>
+            <p><a class="btn btn-default" onclick="location.href='@Url.Action("EditActivity", "Activity")'">Edit  &raquo;</a></p>
+        </div>
+       
+    }
+   
+   </div>
+
