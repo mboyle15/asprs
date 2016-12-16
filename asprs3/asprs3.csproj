@@ -159,10 +159,32 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\StudentController.cs" />
+    <Compile Include="Controllers\ManagementController.cs" />
+    <Compile Include="Controllers\SignUpController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201612161002378_Initial.cs" />
+    <Compile Include="Migrations\201612161002378_Initial.Designer.cs">
+      <DependentUpon>201612161002378_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612161004358_Initial1.cs" />
+    <Compile Include="Migrations\201612161004358_Initial1.Designer.cs">
+      <DependentUpon>201612161004358_Initial1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612161132529_1.cs" />
+    <Compile Include="Migrations\201612161132529_1.Designer.cs">
+      <DependentUpon>201612161132529_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612161135359_2.cs" />
+    <Compile Include="Migrations\201612161135359_2.Designer.cs">
+      <DependentUpon>201612161135359_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201612161846233_3.cs" />
+    <Compile Include="Migrations\201612161846233_3.Designer.cs">
+      <DependentUpon>201612161846233_3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Activity.cs" />
     <Compile Include="Models\Enrollment.cs" />
     <Compile Include="Models\Model1.cs" />
@@ -181,6 +203,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="ClassDiagram1.cd" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -205,7 +228,12 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Student\SelectStudent.cshtml" />
+    <Content Include="Views\SignUp\SelectStudent.cshtml" />
+    <Content Include="Views\Management\ViewActivities.cshtml" />
+    <Content Include="Views\SignUp\ViewStudent.cshtml" />
+    <Content Include="Views\Management\AddActivity.cshtml" />
+    <Content Include="Views\Management\EditActivity.cshtml" />
+    <Content Include="Views\Management\DeleteActivity.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -217,6 +245,26 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201612161002378_Initial.resx">
+      <DependentUpon>201612161002378_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612161004358_Initial1.resx">
+      <DependentUpon>201612161004358_Initial1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612161132529_1.resx">
+      <DependentUpon>201612161132529_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612161135359_2.resx">
+      <DependentUpon>201612161135359_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201612161846233_3.resx">
+      <DependentUpon>201612161846233_3.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

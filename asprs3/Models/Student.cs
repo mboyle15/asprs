@@ -10,15 +10,16 @@ namespace asprs3.Models
     public class Student
     {
         [Key]
-        //[Column(Order = 2)]
         [Display(Name = "Student Number")]
         public int StudentID { get; set; }
 
         [Required]
+        [DataType(DataType.Text)]
         [Display(Name = "Student First Name")]
         public String StudentFName { get; set; }
 
         [Required]
+        [DataType(DataType.Text)]
         [Display(Name = "Student Last Name")]
         public String StudentLName { get; set; }
 
@@ -26,6 +27,10 @@ namespace asprs3.Models
         [DataType(DataType.Date)]
         [Display(Name = "Date of Birth")]
         public DateTime StudentDOB { get; set; }
+
+        [Required]
+        [Display(Name = "Student Grade")]
+        public int StudentGrade { get; set; }
 
     }
 }

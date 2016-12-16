@@ -1,0 +1,53 @@
+﻿@model IEnumerable<asprs3.Models.Student>
+
+@{
+    ViewBag.Title = "ViewStudent";
+}
+
+<h2>View Student</h2>
+
+<p>
+    @Html.ActionLink("Back", "SelectStudent", "SignUp")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentFName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentLName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentDOB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentGrade)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentFName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentLName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentDOB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentGrade)
+        </td>
+        <td>
+            @Html.ActionLink("Register", "ViewActivities", new { id = item.StudentID }) |
+
+        </td>
+    </tr>
+}
+
+</table>
+
+<hr />
+<button type="submit" value="Register Student" class="btn btn-primary">Register Student</button>

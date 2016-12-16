@@ -2,20 +2,21 @@
     ViewBag.Title = "Home Page";
 }
 <div class="jumbotron">
-    <h1>Rilke Schule After School Activities</h1>
+    <img src="../../images/logo.jpg"><h1>Rilke Schule After School Activities</h1>
+
     @* <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
         <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p> *@
 </div>
 <div class="row">
-    <div class="col-md-4">
+    @*<div class="col-md-4">
         <h2>Register for Activities</h2>
         <p>
             Select your student and view/register for after school activities.
         </p>
-        <p><a class="btn btn-default" onclick="location.href='@Url.Action("SelectStudent", "Student")'">Register &raquo;</a></p>
-    </div>
-    @* <div class="col-md-4">
+        <p><a class="btn btn-default" onclick="location.href='@Url.Action("SelectStudent", "SignUp")'">Register &raquo;</a></p>
+    </div>*@
+    <div class="col-md-4">
             <h2>Administration</h2>
-            <p><a class="btn btn-default" onclick="location.href='@Url.Action("FieldTripManager", "FieldTrip")'">Manage &raquo;</a></p>
-        </div> *@
+            <p><a class="btn btn-default" onclick="location.href='@Url.Action("ViewActivities", "Management")'">Manage Activities &raquo;</a></p>
+        </div>
 </div>

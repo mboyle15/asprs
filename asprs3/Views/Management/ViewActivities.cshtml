@@ -1,0 +1,98 @@
+﻿@model IEnumerable<asprs3.Models.Activity>
+
+@{
+    ViewBag.Title = "ViewActivities";
+}
+
+<h2>View Activities</h2>
+
+<p>
+    @Html.ActionLink("Create New", "AddActivity")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ActivityName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ActivityFacilitator)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ActivityLocation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ActivityStartTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ActivityEndTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DailyCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Capacity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CurrentEnrollment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EligibleGrades)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OfferedDays)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quarter)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActivityName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActivityFacilitator)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActivityLocation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActivityStartTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ActivityEndTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DailyCost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Capacity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CurrentEnrollment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EligibleGrades)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OfferedDays)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quarter)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditActivity", new { id=item.ActivityID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ActivityID })
+        </td>
+    </tr>
+}
+
+</table>

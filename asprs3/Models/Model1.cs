@@ -7,7 +7,7 @@ namespace asprs3.Models
     public class Model1 : DbContext
     {
         public Model1()
-            : base("name=Model11")
+            : base("name=Model1")
         {
         }
 

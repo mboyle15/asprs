@@ -16,72 +16,38 @@ namespace asprs3.Controllers
         {
             db = new Model1();
         }
-
-
+            
+        
         public ActionResult SelectStudent()
         {
             return View();
         }
-
-        /*
-        [Authorize(Roles = "Parent")]
+        
+        
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult AddStudent(Student viewModel)
+        public ActionResult ViewStudent(Student viewModel)
         //Get entered Student information and query it against Students, if student exists in Students, add Guardianship entity
         {
-            List<int> StudentList = new List<int>();
-            var parent = User.Identity.GetUserId();
-
-            var F_Name = viewModel.Stud_F_Name;
-            var L_Name = viewModel.Stud_L_Name;
-            var DOB = viewModel.Date_Of_Birth;
-            bool added = false;
-
+            var FName = viewModel.StudentFName;
+            var LName = viewModel.StudentLName;
+            var DOB = viewModel.StudentDOB;
 
             var existingStudent = from m in db.Students
-                                  where m.Stud_F_Name == F_Name && m.Stud_L_Name == L_Name
+                                  where 
+                                    m.StudentFName == FName &&
+                                    m.StudentLName == LName &&
+                                    DOB.Equals(m.StudentDOB)
                                   select m;
 
-            var dateCheck = from m in existingStudent
-                            where DOB.Equals(m.Date_Of_Birth)
-                            select m.Student_Number;
-
-            foreach (int s in dateCheck)
-            {
-                Guardianship guardianship = new Guardianship();
-                guardianship.UserName = parent;
-                guardianship.Student_Number = s;
-                db.Guardianships.Add(guardianship);
-                added = true;
-            }
-
-            db.SaveChanges();
-            if (!added)
-            {
-                return RedirectToAction("AddStudent", "Students");
-            }
-
-
-
-            return RedirectToAction("ManageStudent", "Students");
+            return View(existingStudent.ToList());
         }
-        [Authorize(Roles = "Parent")]
-        public ActionResult ManageStudent()
-        {
-            var userId = User.Identity.GetUserId();
 
-            // Queryable list of Guardianships with a matching username and to the user in session.
-            var studentId = from m in db.Guardianships
-                            where m.Parent.Id == userId
-                            select m.Student_Number;
 
-            var students = from s in db.Students
-                           where studentId.Contains(s.Student_Number)
-                           select s;
+        
 
-            return View(students.ToList());
-        }
+
+
+        /*
         [Authorize(Roles = "Parent")]
         [HttpPost]
         [ValidateAntiForgeryToken]

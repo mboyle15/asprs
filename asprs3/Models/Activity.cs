@@ -7,13 +7,19 @@ namespace asprs3.Models
     public class Activity
     {
         [Key]
-        public int ActivityId { get; set; }
+        public int ActivityID { get; set; }
 
         [Required]
         //[StringLength(100, ErrorMessage = "Must enter a Trip Name", MinimumLength = 1)]
         [DataType(DataType.Text)]
         [Display(Name = "Activity Name")]
         public string ActivityName { get; set; }
+
+        [Required]
+        //[StringLength(100, ErrorMessage = "Must enter a Trip Name", MinimumLength = 1)]
+        [DataType(DataType.MultilineText)]
+        [Display(Name = "Activity Facilitator")]
+        public string ActivityFacilitator { get; set; }
 
         [Required]
         //[StringLength(100, ErrorMessage = "Must enter a Trip Name", MinimumLength = 1)]
@@ -24,12 +30,12 @@ namespace asprs3.Models
         [Required]
         [DataType(DataType.Time)]
         [Display(Name = "Activity Start Time")]
-        public DateTime? ActivityStartTime { get; set; }
+        public TimeSpan ActivityStartTime { get; set; }
 
         [Required]
         [DataType(DataType.Time)]
         [Display(Name = "Activity End Time")]
-        public DateTime? ActivityEndTime { get; set; }
+        public TimeSpan ActivityEndTime { get; set; }
 
         //[Required]
         [DataType(DataType.Currency)]
@@ -38,7 +44,7 @@ namespace asprs3.Models
 
         //[Required]
         [DataType(DataType.Currency)]
-        [Display(Name = "Cost")]
+        [Display(Name = "One-Time Cost")]
         public int Cost { get; set; }
 
         [Required]
@@ -46,8 +52,8 @@ namespace asprs3.Models
         public int Capacity { get; set; }
 
         [Required]
-        [Display(Name = "Enrollment")]
-        public int Enrollment { get; set; }
+        [Display(Name = "Current Enrollment")]
+        public int CurrentEnrollment { get; set; }
 
         [Required]
         [DataType(DataType.Text)]
